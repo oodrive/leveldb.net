@@ -6,13 +6,13 @@
     <title>Level DB for .Net Standard</title>
     <authors>oodrive</authors>
     <owners>oodrive</owners>
-    <licenseUrl>https://oodrive.com</licenseUrl>
-    <projectUrl>https://github.com/oodrive/leveldb</projectUrl>
+    <licenseUrl>https://www.apache.org/licenses/LICENSE-2.0</licenseUrl>
+    <projectUrl>https://github.com/oodrive/leveldb.net</projectUrl>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
     <description>Cross platform LevelDB package for .Net Standard</description>
-    <copyright>Copyright 2017</copyright>
+    <copyright>Copyright 2018</copyright>
     <tags>LevelDB</tags>
-	<repository type="git" url="https://github.com/oodrive/leveldb" />
+	<repository type="git" url="https://github.com/oodrive/leveldb.net" />
 	<dependencies>
 	  <group targetFramework=".NETFramework4" />
 	  <group targetFramework=".NETFramework4.5.2" />
