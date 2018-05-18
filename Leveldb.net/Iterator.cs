@@ -8,8 +8,11 @@ namespace LevelDB
     /// </summary>
     public class Iterator: LevelDBHandle
     {
-        internal Iterator(IntPtr Handle)
+        private readonly Encoding _encoding;
+
+        internal Iterator(IntPtr Handle, Encoding encoding)
         {
+            this._encoding = encoding;
             this.Handle = Handle;
         }
 
@@ -61,7 +64,7 @@ namespace LevelDB
         /// </summary>
         public void Seek(string key)
         {
-            Seek(Encoding.ASCII.GetBytes(key));
+            Seek(_encoding.GetBytes(key));
         }
 
         /// <summary>
@@ -119,7 +122,7 @@ namespace LevelDB
         /// </summary>
         public string KeyAsString()
         {
-            return Encoding.ASCII.GetString(this.Key());
+            return _encoding.GetString(this.Key());
         }
 
         /// <summary>
@@ -158,7 +161,7 @@ namespace LevelDB
         /// </summary>
         public string ValueAsString()
         {
-            return Encoding.ASCII.GetString(this.Value());
+            return _encoding.GetString(this.Value());
         }
 
         /// <summary>

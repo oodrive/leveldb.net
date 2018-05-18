@@ -13,9 +13,12 @@ namespace LevelDB
     /// </summary>
     public class DB : LevelDBHandle, IEnumerable<KeyValuePair<string, string>>, IEnumerable<KeyValuePair<byte[],byte[]>>, IEnumerable<KeyValuePair<int, int[]>>
     {
+        public static Encoding DefaultEncoding = Encoding.UTF8;
+
         private Cache _Cache;
         private Logger _InfoLog;
         private Comparator _Comparator;
+        private Encoding _encoding;
 
         static void Throw(IntPtr error)
         {
@@ -38,17 +41,22 @@ namespace LevelDB
             }
         }
 
+        public DB(Options options, string name) 
+            : this (options, name, DefaultEncoding)
+        {
+        }
+
         /// <summary>
         /// Open the database with the specified "name".
         /// </summary>
-        public DB(Options options, string name)
+        public DB(Options options, string name, Encoding encoding)
         {
             IntPtr error;
             this._Cache = options.Cache;
             this._InfoLog = options.InfoLog;
             this._Comparator = options.Comparator;
             this.Handle = LevelDBInterop.leveldb_open(options.Handle, name, out error);
-
+            this._encoding = encoding;
 
             Throw(error, msg => new UnauthorizedAccessException(msg));
         }
@@ -64,7 +72,7 @@ namespace LevelDB
         /// </summary>
         public void Put(string key, string value, WriteOptions options)
         {
-            this.Put(Encoding.ASCII.GetBytes(key), Encoding.ASCII.GetBytes(value), options);
+            this.Put(_encoding.GetBytes(key), _encoding.GetBytes(value), options);
         }
 
         /// <summary>
@@ -130,7 +138,7 @@ namespace LevelDB
         /// </summary>
         public void Delete(string key, WriteOptions options)
         {
-            this.Delete(Encoding.ASCII.GetBytes(key), options);
+            this.Delete(_encoding.GetBytes(key), options);
         }
 
         /// <summary>
@@ -172,8 +180,8 @@ namespace LevelDB
         /// </summary>
         public string Get(string key, ReadOptions options)
         {
-            var value = Get(Encoding.ASCII.GetBytes(key), options);
-            if (value != null) return Encoding.ASCII.GetString(value);
+            var value = Get(_encoding.GetBytes(key), options);
+            if (value != null) return _encoding.GetString(value);
             return null;
         }
 
@@ -310,7 +318,7 @@ namespace LevelDB
         /// </summary>
         public Iterator CreateIterator(ReadOptions options)
         {
-            return new Iterator(LevelDBInterop.leveldb_create_iterator(this.Handle, options.Handle));
+            return new Iterator(LevelDBInterop.leveldb_create_iterator(this.Handle, options.Handle), _encoding);
         }
 
         /// <summary>

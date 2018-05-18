@@ -17,8 +17,16 @@ namespace LevelDB
     /// </summary>
     public class WriteBatch : LevelDBHandle
     {
+        private readonly Encoding _encoding;
+
         public WriteBatch()
+            : this(DB.DefaultEncoding)
         {
+        }
+
+        public WriteBatch(Encoding encoding)
+        {
+            this._encoding = encoding;
             this.Handle = LevelDBInterop.leveldb_writebatch_create();
         }
 
@@ -35,7 +43,7 @@ namespace LevelDB
         /// </summary>
         public WriteBatch Put(string key, string value)
         {
-            return Put(Encoding.ASCII.GetBytes(key), Encoding.ASCII.GetBytes(value));
+            return Put(_encoding.GetBytes(key), _encoding.GetBytes(value));
         }
 
         /// <summary>
@@ -53,7 +61,7 @@ namespace LevelDB
         /// </summary>
         public WriteBatch Delete(string key)
         {
-            return Delete(Encoding.ASCII.GetBytes(key));
+            return Delete(_encoding.GetBytes(key));
         }
 
         /// <summary>
