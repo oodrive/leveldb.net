@@ -16,6 +16,13 @@ See file "WINDOWS" for instructions on how to build this in Windows.
 
 We're looking for volunteers to build a true Win32 port of LevelDB for Windows.
 
+# Installation #
+LevelDB.Standard is available as a NuGet package:
+
+```
+PM> Install-Package LevelDB.Standard
+```
+
 # Getting Started #
 
 Here's how you can get started with leveldb and .NET.
