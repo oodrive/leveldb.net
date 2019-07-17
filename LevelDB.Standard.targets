@@ -25,5 +25,10 @@
 			<CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
 			<Pack>true</Pack>
 		</Content>
+		<!--
+		<None Include="$(OSXNativex64Path)">
+			<Link>$([System.IO.Path]::GetFilename('$(OSXNativex64Path)'))</Link>
+			<CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+		</None>-->
 	</ItemGroup>
 </Project>
