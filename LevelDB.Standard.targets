@@ -1,9 +1,29 @@
 <Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
-  <ItemGroup>
-    <NativeLibs Include="$(MSBuildThisFileDirectory)**\*.dll" />
-    <None Include="@(NativeLibs)">
-      <Link>%(RecursiveDir)%(FileName)%(Extension)</Link>
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </None>
-  </ItemGroup>
+
+	<PropertyGroup>
+		<WindowsNativex86Path>$(MSBuildThisFileDirectory)..\..\runtimes\win-x86\native\leveldb.dll</WindowsNativex86Path>
+		<WindowsNativex64Path>$(MSBuildThisFileDirectory)..\..\runtimes\win-x64\native\leveldb.dll</WindowsNativex64Path>
+		<OSXNativex64Path>$(MSBuildThisFileDirectory)..\..\runtimes\osx-x64\native\leveldb.dll</OSXNativex64Path>
+	</PropertyGroup>
+
+	<!-- Copy native libraries for Windows -->
+	<ItemGroup Condition=" '$([System.Runtime.InteropServices.RuntimeInformation]::IsOSPlatform($([System.Runtime.InteropServices.OSPlatform]::Windows)))' ">
+		<None Include="$(WindowsNativex86Path)" Condition=" Exists('$(WindowsNativex86Path)') ">
+			<Link>x86\leveldb.dll</Link>
+			<CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+		</None>
+		<None Include="$(WindowsNativex64Path)" Condition=" Exists('$(WindowsNativex64Path)') ">
+			<Link>x64\leveldb.dll</Link>
+			<CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+		</None>
+	</ItemGroup>
+
+	<!-- Copy native libraries for OSX -->
+	<ItemGroup Condition=" '$([System.Runtime.InteropServices.RuntimeInformation]::IsOSPlatform($([System.Runtime.InteropServices.OSPlatform]::OSX)))' ">
+		<Content Include="$(OSXNativex64Path)">
+			<Link>$([System.IO.Path]::GetFilename('$(OSXNativex64Path)'))</Link>
+			<CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+			<Pack>true</Pack>
+		</Content>
+	</ItemGroup>
 </Project>

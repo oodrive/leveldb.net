@@ -14,6 +14,9 @@
     <FileVersion>2.1.5.0
     </FileVersion>
   </PropertyGroup>
+  <PropertyGroup Condition="'$(TargetFramework)' == 'netstandard2.0'">
+    <DefineConstants>NET_STANDARD_20</DefineConstants>
+  </PropertyGroup>
   <ItemGroup>
     <Folder Include="Properties\" />
   </ItemGroup>

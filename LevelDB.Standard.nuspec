@@ -25,13 +25,15 @@
 	<file src="Leveldb.net\bin\Release\net4\**\*.dll" target="lib\net4" />
 	<file src="runtimes\win-x64\native\leveldb.dll" target="build\net4\x64" />
 	<file src="runtimes\win-x86\native\leveldb.dll" target="build\net4\x86" />
+	<file src="runtimes\osx-x64\native\leveldb.dll" target="build\net452\" />
 	<file src="LevelDB.Standard.targets" target="build\net4" />	
 	
 	<!-- Libraries for .Net 4.5.2 -->
 	<file src="Leveldb.net\bin\Release\net452\**\*.dll" target="lib\net452" />
 	<file src="runtimes\win-x64\native\leveldb.dll" target="build\net452\x64" />
 	<file src="runtimes\win-x86\native\leveldb.dll" target="build\net452\x86" />
-	<file src="LevelDB.Standard.targets" target="build\net4" />	
+	<file src="runtimes\osx-x64\native\leveldb.dll" target="build\net452\" />
+	<file src="LevelDB.Standard.targets" target="build\net452" />	
 
 	<!-- Library for .Net Standard -->
 	<file src="Leveldb.net\bin\Release\netstandard2.0\**\*.dll" target="lib\netstandard2.0" />
