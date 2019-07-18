@@ -1,0 +1,122 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{4DF45DA9-B3C6-424E-A664-37935F64B22C}</ProjectGuid>
+    <ProjectTypeGuids>{A3F8F2AB-B479-4A4A-A458-A89E7DC349F1};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <RootNamespace>LevelDB.Net</RootNamespace>
+    <AssemblyName>LevelDB.Net</AssemblyName>
+    <TargetFrameworkVersion>v2.0</TargetFrameworkVersion>
+    <TargetFrameworkIdentifier>Xamarin.Mac</TargetFrameworkIdentifier>
+    <MonoMacResourcePrefix>Resources</MonoMacResourcePrefix>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug</OutputPath>
+    <DefineConstants>DEBUG;</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <EnableCodeSigning>false</EnableCodeSigning>
+    <CreatePackage>false</CreatePackage>
+    <EnablePackageSigning>false</EnablePackageSigning>
+    <IncludeMonoRuntime>false</IncludeMonoRuntime>
+    <UseSGen>false</UseSGen>
+    <HttpClientHandler></HttpClientHandler>
+    <LinkMode></LinkMode>
+    <XamMacArch></XamMacArch>
+    <AOTMode>None</AOTMode>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release</OutputPath>
+    <DefineConstants></DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <EnableCodeSigning>false</EnableCodeSigning>
+    <CreatePackage>false</CreatePackage>
+    <EnablePackageSigning>false</EnablePackageSigning>
+    <IncludeMonoRuntime>false</IncludeMonoRuntime>
+    <UseSGen>false</UseSGen>
+    <HttpClientHandler></HttpClientHandler>
+    <LinkMode></LinkMode>
+    <XamMacArch></XamMacArch>
+    <AOTMode>None</AOTMode>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="Xamarin.Mac" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="..\Leveldb.net\Cache.cs">
+      <Link>Cache.cs</Link>
+    </Compile>
+    <Compile Include="..\Leveldb.net\Comparator.cs">
+      <Link>Comparator.cs</Link>
+    </Compile>
+    <Compile Include="..\Leveldb.net\CompressionLevel.cs">
+      <Link>CompressionLevel.cs</Link>
+    </Compile>
+    <Compile Include="..\Leveldb.net\DB.cs">
+      <Link>DB.cs</Link>
+    </Compile>
+    <Compile Include="..\Leveldb.net\DBExtensions.cs">
+      <Link>DBExtensions.cs</Link>
+    </Compile>
+    <Compile Include="..\Leveldb.net\Env.cs">
+      <Link>Env.cs</Link>
+    </Compile>
+    <Compile Include="..\Leveldb.net\Iterator.cs">
+      <Link>Iterator.cs</Link>
+    </Compile>
+    <Compile Include="..\Leveldb.net\LeastRecentlyUsedSet.cs">
+      <Link>LeastRecentlyUsedSet.cs</Link>
+    </Compile>
+    <Compile Include="..\Leveldb.net\LevelDbFreeHandle.cs">
+      <Link>LevelDbFreeHandle.cs</Link>
+    </Compile>
+    <Compile Include="..\Leveldb.net\LevelDBHandle.cs">
+      <Link>LevelDBHandle.cs</Link>
+    </Compile>
+    <Compile Include="..\Leveldb.net\LevelDBInterop.cs">
+      <Link>LevelDBInterop.cs</Link>
+    </Compile>
+    <Compile Include="..\Leveldb.net\Logger.cs">
+      <Link>Logger.cs</Link>
+    </Compile>
+    <Compile Include="..\Leveldb.net\NativePointer.cs">
+      <Link>NativePointer.cs</Link>
+    </Compile>
+    <Compile Include="..\Leveldb.net\Options.cs">
+      <Link>Options.cs</Link>
+    </Compile>
+    <Compile Include="..\Leveldb.net\PinnedSafeHandle.cs">
+      <Link>PinnedSafeHandle.cs</Link>
+    </Compile>
+    <Compile Include="..\Leveldb.net\ReadOptions.cs">
+      <Link>ReadOptions.cs</Link>
+    </Compile>
+    <Compile Include="..\Leveldb.net\Result.cs">
+      <Link>Result.cs</Link>
+    </Compile>
+    <Compile Include="..\Leveldb.net\SnapShot.cs">
+      <Link>SnapShot.cs</Link>
+    </Compile>
+    <Compile Include="..\Leveldb.net\WriteBatch.cs">
+      <Link>WriteBatch.cs</Link>
+    </Compile>
+    <Compile Include="..\Leveldb.net\WriteOptions.cs">
+      <Link>WriteOptions.cs</Link>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <ObjcBindingNativeLibrary Include="$(SolutionDir)runtimes/osx-x64/native/leveldb.dll" Link="leveldb.dll" />
+  </ItemGroup>
+  <Import Project="$(MSBuildExtensionsPath)\Xamarin\Mac\Xamarin.Mac.CSharp.targets" />
+</Project>

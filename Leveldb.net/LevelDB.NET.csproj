@@ -1,6 +1,6 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
   <PropertyGroup>
-    <TargetFrameworks>netstandard2.0;net4;net452</TargetFrameworks>
+    <TargetFrameworks>netstandard2.0;net4</TargetFrameworks>
     <Configurations>Debug;Release</Configurations>
 	<AssemblyOriginatorKeyFile>..\LevelDB.snk</AssemblyOriginatorKeyFile>
     <SignAssembly>true</SignAssembly>
@@ -9,9 +9,9 @@
   </PropertyGroup>
   <PropertyGroup>
     <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
-    <Version>2.1.5</Version>
-    <AssemblyVersion>2.1.5.0</AssemblyVersion>
-    <FileVersion>2.1.5.0
+    <Version>2.1.6</Version>
+    <AssemblyVersion>2.1.6.0</AssemblyVersion>
+    <FileVersion>2.1.6.0
     </FileVersion>
   </PropertyGroup>
   <PropertyGroup Condition="'$(TargetFramework)' == 'netstandard2.0'">

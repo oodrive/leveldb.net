@@ -18,17 +18,13 @@
 		</None>
 	</ItemGroup>
 
-	<!-- Copy native libraries for OSX -->
+	<!-- Copy native libraries for OSX (for Xamarin.Mac Full) -->
 	<ItemGroup Condition=" '$([System.Runtime.InteropServices.RuntimeInformation]::IsOSPlatform($([System.Runtime.InteropServices.OSPlatform]::OSX)))' ">
 		<Content Include="$(OSXNativex64Path)">
 			<Link>$([System.IO.Path]::GetFilename('$(OSXNativex64Path)'))</Link>
 			<CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
 			<Pack>true</Pack>
 		</Content>
-		<!--
-		<None Include="$(OSXNativex64Path)">
-			<Link>$([System.IO.Path]::GetFilename('$(OSXNativex64Path)'))</Link>
-			<CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-		</None>-->
 	</ItemGroup>
+	
 </Project>
