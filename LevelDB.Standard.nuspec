@@ -27,7 +27,7 @@
 	<file src="Leveldb.net\bin\Release\net4\**\*.dll" target="lib\net4" />
 	<file src="runtimes\win-x64\native\leveldb.dll" target="build\net4\x64" />
 	<file src="runtimes\win-x86\native\leveldb.dll" target="build\net4\x86" />
-	<file src="runtimes\osx-x64\native\leveldb.dll" target="build\net452\" />	<!-- OSX native, mandatory for Xamarin.Mac Full -->
+	<file src="runtimes\osx-x64\native\leveldb.dll" target="build\net4\" />	<!-- OSX native, mandatory for Xamarin.Mac Full -->
 	<file src="LevelDB.Standard.targets" target="build\net4" />	
 	
 	<!-- Libraries for Xamarin.Mac modern -->
