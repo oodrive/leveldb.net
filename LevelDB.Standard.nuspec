@@ -6,11 +6,11 @@
     <title>Level DB for .Net Standard</title>
     <authors>oodrive</authors>
     <owners>oodrive</owners>
-    <licenseUrl>https://www.apache.org/licenses/LICENSE-2.0</licenseUrl>
+	<license type="file">license.txt</license>
     <projectUrl>https://github.com/oodrive/leveldb.net</projectUrl>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
     <description>Cross platform LevelDB package for .Net Standard</description>
-    <copyright>Copyright 2018</copyright>
+    <copyright>Copyright 2019</copyright>
     <tags>LevelDB</tags>
 	<repository type="git" url="https://github.com/oodrive/leveldb.net" />
 	<dependencies>
@@ -20,6 +20,8 @@
 	</dependencies>
   </metadata>
   <files>
+  
+	<file src="license.txt" target="" />
 	
 	<!-- Libraries for .Net 4 -->
 	<file src="Leveldb.net\bin\Release\net4\**\*.dll" target="lib\net4" />
