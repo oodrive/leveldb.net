@@ -151,9 +151,9 @@ The following example shows how you can iterate all the keys as strings.
 using (var iterator = db.CreateIterator())
 {
 	// Iterate to print the keys as strings
-	for (it.SeekToFirst(); it.IsValid(); it.Next()) 
+	for (iterator.SeekToFirst(); iterator.IsValid(); iterator.Next()) 
 	{
-	    Console.WriteLine("Key as string: {0}", it.KeyAsString());
+	    Console.WriteLine("Key as string: {0}", iterator.KeyAsString());
 	}
 }
 ```
@@ -165,9 +165,9 @@ The next example shows how you can iterate all the values in the leveldb instanc
 using (var iterator = db.CreateIterator())
 {
 	// Iterate in reverse to print the values as strings
-	for (it.SeekToLast(); it.IsValid(); it.Prev()) 
+	for (iterator.SeekToLast(); iterator.IsValid(); iterator.Prev()) 
 	{
-	    Console.WriteLine("Value as string: {0}", it.ValueAsString());
+	    Console.WriteLine("Value as string: {0}", iterator.ValueAsString());
 	}
 }
 ```
