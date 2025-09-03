@@ -1,4 +1,4 @@
-name: QA Engine
+name: Fixing Bug
 
 on:
   push:
