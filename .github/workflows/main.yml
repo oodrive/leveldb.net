@@ -1,4 +1,4 @@
-name: Todo Gin and Gorm
+name: Hashing with rust
 
 on:
   push:
