@@ -1,4 +1,4 @@
-name: Deploy LandingPage
+name: Deploy Static Site
 
 on:
   push:
