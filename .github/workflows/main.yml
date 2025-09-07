@@ -1,4 +1,4 @@
-name: Deploy Backedn
+name: Deploy Frontdn
 
 on:
   push:
