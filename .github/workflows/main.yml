@@ -1,4 +1,4 @@
-name: Deploy LandingPage
+name: Deploy RESTfulAPIx
 
 on:
   push:
