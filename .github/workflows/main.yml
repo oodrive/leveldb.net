@@ -1,4 +1,4 @@
-name: deploy landingx
+name: deploy landingxpagez
 
 on:
   push:
