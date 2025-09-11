@@ -1,4 +1,4 @@
-name: deploy landingpage
+name: deploy ssr
 
 on:
   push:
