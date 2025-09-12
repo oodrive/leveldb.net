@@ -1,4 +1,4 @@
-name: deploy landingxpagez
+name: deploy RESTfulAPI
 
 on:
   push:
