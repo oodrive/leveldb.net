@@ -1,4 +1,4 @@
-name: deploy REstAPi
+name: deploy GraphQL
 
 on:
   push:
