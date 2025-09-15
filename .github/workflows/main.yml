@@ -1,4 +1,4 @@
-name: deploy GraphQRLX
+name: deploy GinAndGormX
 
 on:
   push:
