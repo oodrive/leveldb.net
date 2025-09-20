@@ -1,4 +1,4 @@
-name: deploy LandingPaageesssPortofolio
+name: deploy SimplePortofolio
 
 on:
   push:
