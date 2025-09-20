@@ -1,4 +1,4 @@
-name: deploy XyzCrud
+name: deploy MaloxserPages
 
 on:
   push:
