@@ -1,4 +1,4 @@
-name: deploy SimplePortofolio
+name: deploy XyzCrud
 
 on:
   push:
