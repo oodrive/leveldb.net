@@ -1,4 +1,4 @@
-name: deploy MaloxserPages
+name: deploy CRUD-API-BACKEND
 
 on:
   push:
