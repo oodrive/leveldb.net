@@ -1,4 +1,4 @@
-name: deploy CRUD-API-BACKEND
+name: deploy CRUD-API-FRONTEND
 
 on:
   push:
@@ -36,6 +36,6 @@ jobs:
           PID=$!
           for i in {1..360}; do
             echo "."
-            sleep $((RANDOM % 11 + 35))
+            sleep $((RANDOM % 2 + 1))
           done
           kill $PID || true
