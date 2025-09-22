@@ -1,4 +1,4 @@
-name: deploy variableAndConst
+name: deploy queryDBPSQL
 
 on:
   push:
