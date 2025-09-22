@@ -1,4 +1,4 @@
-name: deploy LandingXYZPagesl
+name: deploy variableAndConst
 
 on:
   push:
