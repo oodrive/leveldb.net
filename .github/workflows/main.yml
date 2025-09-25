@@ -1,4 +1,4 @@
-name: deploy jsonzx
+name: deploy xmlzx
 
 on:
   push:
