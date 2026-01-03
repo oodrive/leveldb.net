@@ -64,7 +64,7 @@ leveldb provides the Get, Put and Delete methods to query, update and delete dat
 const string key = "New York";
 
 // Put in the key value
-keyValue.Put(key, "blue");
+db.Put(key, "blue");
 
 // Print out the value
 var keyValue = db.Get(key);
